@@ -13,11 +13,14 @@ const RENDERER_URI = url.format({
   slashes: true
 })
 
-console.log(`Render: ${RENDERER_URI}`)
+console.log(`Begin rendering: ${RENDERER_URI}`)
 
 const createWindow = () => {
   console.log("App Ready")
-  WindowHelper.create(RENDERER_URI)
+  WindowHelper.create({
+    url: RENDERER_URI,
+    icon:  __dirname + '/assets/favicon.ico'
+  })
 }
 
 app.on('ready', createWindow)

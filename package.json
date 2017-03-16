@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/Zombispormedio/dwell.git",
+  "repository": "https://github.com/Zombispormedio/comic-strips.git",
   "author": "Xavier Serrano",
   "license": "MIT",
   "devDependencies": {

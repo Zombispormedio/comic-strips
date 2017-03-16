@@ -19,13 +19,14 @@ const installExtensions = async () => {
         .catch(console.log)
 }
 
-const create = async (url) => {
+const create = async ({url, icon}) => {
     await installExtensions()
     const mainScreen = screen.getPrimaryDisplay().bounds
 
     let mainWindow = new BrowserWindow({
         width: mainScreen.width,
-        height: mainScreen.height
+        height: mainScreen.height,
+        icon
     })
     mainWindow.maximize()
     mainWindow.loadURL(url)
