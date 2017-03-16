@@ -1,41 +1,30 @@
 import {
-  app,
-  BrowserWindow
+  app
 } from 'electron'
 
-const path = require('path')
-const url = require('url')
+import path from 'path'
+import url from 'url'
 
+import WindowHelper from './browser/window'
 
-let mainWindow
+const RENDERER_URI = url.format({
+  pathname: path.join(__dirname, '/renderer/index.html'),
+  protocol: 'file:',
+  slashes: true
+})
 
+console.log(`Render: ${RENDERER_URI}`)
 
-function createWindow() {
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600
-  })
-
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/renderer/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
-
-  if (process.env.NODE_ENV !== 'production') {
-    mainWindow.webContents.openDevTools()
-  }
-
-  mainWindow.on('closed', () => {
-    mainWindow = null
-  })
+const createWindow = () => {
+  console.log("App Ready")
+  WindowHelper.create(RENDERER_URI)
 }
-
 
 app.on('ready', createWindow)
 
 
-app.on('window-all-closed', function () {
+app.on('window-all-closed',  () =>{
+    console.log("App Closed")
   if (process.platform !== 'darwin') {
     app.quit()
   }
