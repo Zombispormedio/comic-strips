@@ -1,2 +1,5 @@
 # Stubborn Enemy
-Beyond a comic viewer
+
+[Work in progress]
+
+As comic-book fan, I have tried several comic-book viewers and I have felt comfy in one of every ten. One that I use currently is quite simple and it do its job, but a comic-book viewer should bring more value: giving information about certain comic-books, about characters and plot, keeping a registry of the readings and what comic-books you have read...
